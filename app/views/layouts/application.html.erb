@@ -8,7 +8,10 @@
   <%= stylesheet_link_tag 'http://yui.yahooapis.com/2.4.0/build/reset-fonts-grids/reset-fonts-grids.css', :media => "all" %>
   <%= stylesheet_link_tag 'http://yui.yahooapis.com/2.4.0/build/base/base-min.css', :media => "all" %>
   <%= stylesheet_link_tag 'style', :media => "all" %>
+  <%= stylesheet_link_tag 'crantastic', :media => "all" %>
   <%= auto_discovery_link_tag :atom, @atom if @atom %>
+  <%= javascript_include_tag 'mootools.js'%>
+  <%= javascript_include_tag 'crantastic.js'%>
   <meta name="verify-v1" content="YtXicWGGldm5yUfU718DJMAreQ9gf2gtsSCe5VysH10=" />
 </head>
 <body>

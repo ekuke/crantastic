@@ -2,10 +2,53 @@
 <% @atom = formatted_packages_path(:format => :atom) %>
 
 <% cache do %>
-  <p>There are <%= @packages.length %> packages listed on crantastic:
+<div id="search-content">
 
-  <%- for package in @packages -%>
-  <%= link_to package.name, package %>
+  <div class="box">
+    <% form_tag  do -%>
+    <p>
+      <label for="package">Package name</label>: <%= text_field_tag 'package'  %>
+      <%= submit_tag 'Search',:id => "search-button",:style=> "font-weight:bold;background-color:#FFFFFF; border:none;" %> 
+    </p>
+    <% end -%>
+  </div>
+
+
+<table class="t-data-grid">
+  <thead>
+    <tr>
+      <th class="firstName t-first">
+	<%= link_to "Package name", "packages:sort/packageName" %>
+	  <%= image_tag("sortable.png",:class=>"t-sort-icon") %>
+      </th>
+      <th class="lastName">
+	 <%= link_to "Maintainer", "packages:sort/packageName" %>
+	  <%= image_tag("sortable.png",:class=>"t-sort-icon") %>
+      </th><th class="age t-last">
+	 <%= link_to "Created at", "packages:sort/createdAt" %>
+	  <%= image_tag("sortable.png",:class=>"t-sort-icon") %>
+      </th>
+    </tr>
+</thead>
+<tbody  id="packages-list">
+
+<%= render :partial => "packages/search" %>
+</tbody>
+</table>
+
+
+<div class="t-data-grid-pager">
+  <%- for  i in 1...10 -%>
+    <% if (i.equal?(params[:id].to_i)) || (i==1 and (!params[:id])) %>
+      <span class="current"><%=i%></span>
+    <% else %>
+      <%= link_to i, "/packages/page/"+i.to_s %>
+    <% end %>
   <%- end -%>
-  </p>
+</div>
+
+
+</div>
 <% end %>
+
+

@@ -1,0 +1,25 @@
+<% @atom = formatted_packages_path(:format => :atom) %>
+<% cache do %>
+
+  <%- for package in @packages -%>
+        <tr class="t-first">
+          <td class="firstName">
+            <%= link_to package.name, package %>
+          </td>
+          <td class="lastName">
+	    <% if(package.latest.maintainer) %>
+            <%=  package.latest.maintainer.name %>
+	    <% end %>
+            <a href="http://mysite/myapp/about/7"></a>
+          </td>
+          <td class="age">
+	    <% if(package.created_at) %>
+            <%= package.created_at.to_s(:long) %>
+	    <% end %>
+          </td>
+        </tr>
+  <%- end -%>
+
+<% end %>
+
+

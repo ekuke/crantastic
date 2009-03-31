@@ -1,0 +1,47 @@
+div.t-data-grid-pager a, div.t-data-grid-pager span.current {
+border:1px solid silver;
+color:black;
+font-size:medium;
+margin-right:5px;
+padding:2px 5px;
+text-decoration:none;
+}
+
+div.t-data-grid-pager span.current {
+#background-color:#809FFF;
+background-color: #CEFD9B;
+color:white;
+}
+
+
+TABLE.t-data-grid THEAD TR {
+    color: white;
+    background-color: #CEFD9B;
+}
+
+TABLE.t-data-grid THEAD TR TH {
+    text-align: left;
+    padding: 3px;
+    white-space: nowrap;
+    border-right: 1px solid silver;
+    border-bottom: 1px solid silver;
+    border-top: 1px solid silver;
+    border-left: 1px solid silver;
+}
+
+
+TABLE.t-data-table TD {
+    border: 1px solid silver;
+    margin: 0px;
+}
+
+
+TABLE.t-data-grid TBODY th, td  {
+border:1px solid silver;
+}
+
+label {
+color:#333377;
+font-weight:bold;
+text-align:left;
+}

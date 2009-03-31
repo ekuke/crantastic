@@ -17,7 +17,8 @@ ActionController::Routing::Routes.draw do |map|
   map.activate '/activate/:activation_code', :controller => 'users', :action => 'activate'
   map.login  '/login', :controller => 'sessions', :action => 'new'
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'
-
+  map.search '/packages/_search/:id', :controller => 'packages', :action => 'search'
+  map.search '/packages/page/:id', :controller => 'packages', :action => 'index'
 
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
